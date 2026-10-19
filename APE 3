@@ -2,7 +2,7 @@
 
 void main(){
 
-    int   cdocu = 0, cima = 0, cvide = 0, cprod = 0;
+    int   cdocu = 0, cima = 0, cvide = 0, cprog = 0;
     float tadocu =0.00, taima = 0.00, tavide = 0.00, taprog = 0.00, td = 0.00, ti = 0.00, tv = 0.00, tpro = 0.00, etGB = 0.00, etu = 0.00, por = 0.00, cdGB = 0.00;
 
     printf("Ingrese la cantidad de documentos que tiene: ");
@@ -12,7 +12,7 @@ void main(){
     printf("Ingrese la cantidad de videos que tiene: ");
     scanf("%d", &cvide);
     printf("Ingrese la cantidad de programas que tiene: ");
-    scanf("%d", &cprod);
+    scanf("%d", &cprog);
     printf("Ingrese la capacidad de almacenamiento del disco (GB): ");
     scanf("%f", &cdGB);
     printf("Ingrese el tamano de los documento en (MB): ");
