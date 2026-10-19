@@ -29,7 +29,7 @@ void main(){
     tv = cvide * tavide;
     tpro = cprod * taprog;
     etGB = (td + ti + tv + tpro) / 1024;
-    por = etGB / cdGB * 100;
+    por = (etGB / cdGB) * 100;
     etu = cdGB - etGB;
 
     printf("El espacio utilizado es: %.2f GB\n", etGB);
