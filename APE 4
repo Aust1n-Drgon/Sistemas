@@ -1,0 +1,16 @@
+Python
+print("....... Hola Mundo :) .......")
+Code Js
+console.log("Hola mundo");
+Java
+package holamundo;
+
+public class Holamundo {
+
+    public static void main(String[] args) {
+      
+        System.out.println(" Hola mundo :)");
+        
+    } 
+    
+}
