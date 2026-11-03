@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="AreaTrapecioDiagram" name="Diagrama de Flujo Area Trapecio">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Inicio -->
+        <mxCell id="start" value="Inicio" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Declaracion de Variables -->
+        <mxCell id="vars" value="ba_ma = 0.0&#10;ba_me = 0.0&#10;h = 0.0&#10;a = 0.0&#10;ar_al_cu = 0.0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="310" y="130" width="180" height="90" as="geometry" />
+        </mxCell>
+        
+        <!-- Lectura ba_ma -->
+        <mxCell id="read1" value="Presentar: &quot;Ingrese la base mayor:&quot;&#10;Leer ba_ma" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="270" y="250" width="260" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Lectura ba_me -->
+        <mxCell id="read2" value="Presentar: &quot;Ingrese la base menor:&quot;&#10;Leer ba_me" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="270" y="330" width="260" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Lectura h -->
+        <mxCell id="read3" value="Presentar: &quot;Ingrese la altura:&quot;&#10;Leer h" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="270" y="410" width="260" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Mensaje Info -->
+        <mxCell id="info1" value="Presentar: &quot;[INFO]: Verificando consistencia...&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="260" y="490" width="280" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Condicion -->
+        <mxCell id="decision" value="¿ba_ma &gt; ba_me Y h &gt; 0?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="570" width="220" height="90" as="geometry" />
+        </mxCell>
+        
+        <!-- Rama SI (Calculos y Salida) -->
+        <mxCell id="proc_si" value="Presentar: &quot;[INFO]: Dimensiones validas.&quot;&#10;a = ((ba_ma + ba_me) * h) / 2&#10;ar_al_cu = a ^ 3&#10;Presentar: &quot;Area: &quot; + a&#10;Presentar: &quot;Area al cubo: &quot; + ar_al_cu&#10;Presentar: &quot;Calculo finalizado exitosamente.&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="110" y="700" width="270" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Rama NO (Advertencia) -->
+        <mxCell id="proc_no" value="Presentar: &quot;[ADVERTENCIA]: Los datos no cumplen la condicion ideal.&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="430" y="700" width="270" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Union / Punto de encuentro -->
+        <mxCell id="join" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="395" y="870" width="10" height="10" as="geometry" />
+        </mxCell>
+        
+        <!-- Fin -->
+        <mxCell id="end" value="Fin" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="910" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Conexiones / Flechas -->
+        <mxCell id="e1" edge="1" parent="1" source="start" target="vars"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="vars" target="read1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="read1" target="read2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="read2" target="read3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="read3" target="info1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="info1" target="decision"><mxGeometry relative="1" as="geometry" /></mxCell>
+        
+        <mxCell id="e_si" value="SÍ" edge="1" parent="1" source="decision" target="proc_si">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="245" y="615" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="e_no" value="NO" edge="1" parent="1" source="decision" target="proc_no">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="565" y="615" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="e7" edge="1" parent="1" source="proc_si" target="join">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="245" y="875" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="e8" edge="1" parent="1" source="proc_no" target="join">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="565" y="875" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="e9" edge="1" parent="1" source="join" target="end"><mxGeometry relative="1" as="geometry" /></mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
