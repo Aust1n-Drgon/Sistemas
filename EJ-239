@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float ma = 0.0f;
+    float v = 0.0f;
+    float ene = 0.0f;
+    float log_ene = 0.0f;
+
+    printf("Ingrese la masa del objeto (en kg): ");
+    scanf("%f", &ma);
+    printf("Ingrese la velocidad del objeto (en m/s): ");
+    scanf("%f", &v);
+
+    if ((ma > 0) && (v > 0)) {
+        ene = ((ma * v * v) / 2);
+
+        if (ene > 0) {
+            log_ene = log10f(ene);
+        }
+        printf("\n-------------------- RESULTADOS DEL CALCULO --------------------\n");
+        printf("Energia cinetica calculada: %.4f Julios\n", ene);
+        
+        if (ene > 0) {
+            printf("Logaritmo en base 10 de la energia (log10): %.4f\n", log_ene);
+        } 
+        else {
+            printf("Logaritmo en base 10: No calculable (la energia es cero o negativa).\n");
+        }
+
+        printf("\n-------------------- RESUMEN DE DATOS INGRESADOS --------------------\n");
+        printf("Masa del objeto: %.2f kg\n", ma);
+        printf("Velocidad del objeto: %.2f m/s\n", v);
+        printf("---------------------------------------------------------------------\n");
+        printf("\n[INFO]: Proceso completado exitosamente en el sistema de la farmacia.\n");
+    } 
+    else {
+        printf("\n[ERROR]: La masa y la velocidad deben ser mayores que cero. Por favor, ingrese valores validos.\n");
+    }
+   
+    return 0;
+}
