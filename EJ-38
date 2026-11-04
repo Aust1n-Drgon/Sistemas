@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    
+    float me, pi;
+    float m_pie = 3.28084f; 
+    float do_pie = 0.00;
+
+    printf("Ingrese la distancia en metros: ");
+    scanf("%f", &me);
+    
+    pi = me * m_pie;
+
+    if (pi > 0){
+
+    do_pie = pi * 2.0f;
+
+       printf("\n%.2f metros equivalen a %.2f pies\n", me, pi);
+       printf("El doble del resultado en pies es: %.2f pies\n", do_pie);
+       printf("\n La operacion se ha completado con exito.\n");
+
+    }
+    else{
+         printf("\n%.2f metros equivalen a %.2f pies\n", me, pi);
+        printf("Error los pies son menores a 0\n");
+        printf("La operacion no se pudo completar con exito\n");
+
+    }
+   
+    return 0;
+}
