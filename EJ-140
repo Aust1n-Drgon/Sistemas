@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float v1;
+    float v2;
+    float v3;
+    float ve_prom;
+    float ra;
+
+    printf("Ingrese la velocidad 1 (km/h): ");
+    scanf("%f", &v1);
+    printf("Ingrese la velocidad 2 (km/h): ");
+    scanf("%f", &v2);
+    printf("Ingrese la velocidad 3 (km/h): ");
+    scanf("%f", &v3);
+    
+    ve_prom = ((v1 + v2 + v3) / 3);
+
+    if (ve_prom > 0) {
+
+    ra= sqrtf(fabsf(ve_prom));
+    printf("\n-------------------- RESULTADOS DEL ANALISIS --------------------\n");
+    printf("Velocidad promedio calculada: %.2f km/h\n", ve_prom);
+    printf("Raiz cuadrada del valor absoluto del resultado: %.4f\n", ra);
+    printf("-----------------------------------------------------------------\n");
+    printf("\n Proceso realizado con exito en el sistema de la agencia.\n");
+
+    } 
+    else{
+        printf("Velocidad promedio calculada: %.2f km/h\n", ve_prom);
+        printf("La velocidad promedio es negativa por lo tanto no se puede calcular el valor absoluto \n");
+    }
+
+    return 0;
+}
