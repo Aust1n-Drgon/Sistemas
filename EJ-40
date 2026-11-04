@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float ba_ma;
+    float ba_me;
+    float h;
+    float a = 0.0f;
+    float ar_al_cu = 0.0f;
+
+    printf("Ingrese el valor de la base mayor: ");
+    scanf("%f", &ba_ma);
+    printf("Ingrese el valor de la base menor: ");
+    scanf("%f", &ba_me);
+    printf("Ingrese el valor de la altura: ");
+    scanf("%f", &h);
+
+    printf("\n[INFO]: Verificando consistencia de las dimensiones ingresadas...\n");
+    
+    if ((ba_ma > ba_me) && (h > 0)) {
+        printf("[INFO]: Las dimensiones del trapecio son validas y consistentes.\n");
+        
+        a = ((ba_ma + ba_me) * h) / 2;
+        ar_al_cu = powf(a, 3.0f); 
+
+        printf("----------------------------------------\n");
+        printf("           RESULTADOS OBTENIDOS         \n");
+        printf("----------------------------------------\n");
+        printf("Area calculada del trapecio: %.2f unidades cuadradas\n", a);
+        printf("Area elevada al cubo: %.2f unidades cubicas\n", ar_al_cu);
+        printf("[INFO]: El calculo ha finalizado exitosamente.\n");
+    } 
+    else {
+    
+        printf("[ADVERTENCIA]: Los datos no cumplen la condicion ideal (base mayor > base menor y altura > 0).\n");
+    }
+
+    return 0;
+}
