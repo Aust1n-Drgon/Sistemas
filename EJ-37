@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+    int n = 0;
+    int dob = 0;
+    int tr = 0;
+    int con_log = 0; 
+    float in_mul = 0.0f;
+
+    printf("Ingrese un numero entero: ");
+    scanf("%d", &n);
+
+    if (n != 0) { 
+        dob = 2 * n;
+        tr = 3 * n;
+    } else {
+        printf("Entrada no valida, solo se permiten numeros enteros diferentes de cero.\n");
+        return 1; 
+    }
+    
+    con_log = 0;
+    if ((dob < tr) && (dob > 0)) {
+        con_log = 1;
+    }
+
+    printf("\n--- Resultados del analisis ---\n");
+    printf("El doble es: %d\n", dob);
+    printf("El triple es: %d\n", tr);
+    printf("---------------------------------\n");
+    
+    printf("Evaluacion logica ((doble < triple) && (doble > 0)): ");
+    if (con_log == 1) {
+        printf("Verdadero (1)\n");
+    }
+    if (con_log == 0) {
+        printf("Falso (0)\n");
+    }
+
+    if (dob != 0) {
+        in_mul = 1.0f / (float)dob;
+        printf("El inverso multiplicativo del doble (%d) es: %.4f\n", dob, in_mul);
+    } else {
+        printf("Error: Division por cero.\n");
+    }
+    
+    printf("\n--- Valores de las variables auxiliares ---\n");
+    printf("Valor de n: %d\n", n);
+    printf("Valor de dob: %d\n", dob);
+    printf("Valor de tr: %d\n", tr);
+    printf("Valor del inverso multiplicativo: %.4f\n", in_mul);
+
+    return 0;
+}
