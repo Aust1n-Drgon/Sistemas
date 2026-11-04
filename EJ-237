@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main() {
+    int c = 0;
+    int con_ma = 0;
+    int con_mu = 0;
+    int cum_con = 0;
+    int tri_c = 0;
+
+    printf("Ingrese un numero entero : ");
+    scanf("%d", &c);
+    if (c > 100) {
+        con_ma = 1;
+    }
+    if (c % 5 == 0) {
+        con_mu = 1;
+    }
+    if (c > 100) {
+        if (c % 5 == 0) {
+            cum_con = 1;
+        }
+    }
+    printf("\n-------------------- RESULTADOS DE LA EVALUACION --------------------\n");
+    printf("Valor ingresado (c): %d\n", c);
+
+    if (con_ma == 1) {
+        printf("Verdadero (1)\n");
+    }
+    if (con_ma == 0) {
+        printf("Falso (0)\n");
+    }
+    printf("Evaluacion 2 (c %% 5 == 0): ");
+    if (con_mu == 1) {
+        printf("Verdadero (1)\n");
+    }
+    if (con_mu == 0) {
+        printf("Falso (0)\n");
+    }
+    if (cum_con == 1) {
+        printf("Estado: El numero CUMPLE ambas condiciones simultaneamente.\n");
+    }
+    if (cum_con == 0) {
+        printf("Estado: El numero NO cumple ambas condiciones.\n");
+    }
+    
+    printf("Valor de la variable de condicion: %d\n", cum_con);
+    if (c > 0) {
+        tri_c = c * 3;
+        printf("El numero es positivo. El triple del valor (%d) es: %d\n", c, tri_c);
+    }
+    if (c <= 0) {
+        printf("El numero no es positivo (es menor o igual a cero), por lo que no se calcula el triple.\n");
+    }
+    printf("\n[INFO]: Proceso completado exitosamente en el sistema de la panaderia.\n");
+
+    return 0;
+}
