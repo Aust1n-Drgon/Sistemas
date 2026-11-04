@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+    float n1 = 0.0f;
+    float n2 = 0.0f;
+    float n3 = 0.0f;
+    float prom = 0.0f;
+    float ma = 0.0f;
+    int ma_prom = 0;
+
+    printf("Ingrese el primer numero real: ");
+    scanf("%f", &n1);
+    
+    printf("Ingrese el segundo numero real: ");
+    scanf("%f", &n2);
+    
+    printf("Ingrese el tercer numero real: ");
+    scanf("%f", &n3);
+
+    prom = ((n1 + n2 + n3) / 3);
+
+    ma = n1;
+    if (n2 > ma) {
+        ma = n2;
+    }
+    if (n3 > ma) {
+        ma = n3;
+    }
+
+    ma_prom = 0;
+    if (ma > prom) {
+        ma_prom = 1;
+    }
+
+    printf("\n-------------------- RESULTADOS DEL ANALISIS --------------------\n");
+    printf("El promedio calculado es: %.2f\n", prom);
+    printf("El numero mayor es: %.2f\n", ma);
+    
+    if (ma_prom == 1) {
+        printf("Evaluacion logica (mayor > promedio): Verdadero (1)\n");
+    }
+    if (ma_prom == 0) {
+        printf("Evaluacion logica (mayor > promedio): Falso (0)\n");
+    }
+
+    int ma_ent = (int)ma;
+    if (ma >= 0) {
+        if (ma < 10) {
+            if ((ma - (float)ma_ent) == 0.0f) {
+                long long fact = 1;
+                for (int i = 1; i <= ma_ent; i++) {
+                    fact *= i;
+                }
+                printf("El numero mayor (%.0f) es un entero positivo menor que 10. Su factorial es: %lld\n", ma, fact);
+            }
+        }
+    }
+    
+    if (ma < 0 || ma >= 10 || (ma - (float)ma_ent != 0.0f)) {
+        printf("El valor mayor no cumple con la condicion estricta de ser un entero positivo menor que 10 para calcular su factorial.\n");
+    }
+
+    printf("-----------------------------------------------------------------\n");
+    printf("\nProceso realizado con exito en el sistema de la cooperativa.\n");
+
+    return 0;
+}
