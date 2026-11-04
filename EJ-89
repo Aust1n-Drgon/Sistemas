@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+    float PI = 3.14159f;
+    int fig = 0;
+    float pa1 = 0.0f;
+    float pa2 = 0.0f;
+    float ar = 0.0f;
+    int area_pos = 0;
+    float min_val = 0.0f;
+
+    printf("[ENTRADA] Seleccione la figura geometrica:\n   1. Circulo\n   2. Triangulo\n   3. Rectangulo\n   4. Cuadrado\n");
+    printf("Ingrese opcion (1-4): ");
+    scanf("%d", &fig);
+
+    if (fig == 1) {
+        printf("Ingrese el radio del circulo: ");
+        scanf("%f", &pa1);
+        ar = PI * pa1 * pa1;
+    }
+    else if (fig == 2) {
+        printf(" Ingrese la base del triangulo: ");
+        scanf("%f", &pa1);
+        printf("Ingrese la altura del triangulo: ");
+        scanf("%f", &pa2);
+        ar = (pa1 * pa2) / 2.0f;
+    }
+    else if (fig == 3) {
+        printf("Ingrese la base del rectangulo: ");
+        scanf("%f", &pa1);
+        printf("Ingrese la altura del rectangulo: ");
+        scanf("%f", &pa2);
+        ar = pa1 * pa2;
+    }
+    else if (fig == 4) {
+        printf("Ingrese el lado del cuadrado: ");
+        scanf("%f", &pa1);
+        ar = pa1 * pa1;
+    }
+    else {
+        printf(" Opcion de figura no valida.\n");
+        ar = 0.0f;
+    }
+
+    if (ar > 0.0f) {
+        area_pos = 1;
+    }
+    if (ar <= 0.0f) {
+        area_pos = 0;
+    }
+
+    min_val = (float)fig;
+    if (pa1 < min_val) {
+        min_val = pa1;
+    }
+    if (pa2 < min_val) {
+        min_val = pa2;
+    }
+    if (ar < min_val) {
+        min_val = ar;
+    }
+    if ((float)area_pos < min_val) {
+        min_val = (float)area_pos;
+    }
+    if (PI < min_val) {
+        min_val = PI;
+    }
+
+    printf("\n-------------------- INFORMACION DE SALIDA --------------------\n");
+    printf("Area calculada: %.4f\n", ar);
+    
+    printf("Evaluacion de la expresion : ");
+    if (area_pos == 1) {
+        printf(" El area es positiva\n");
+    }
+    if (area_pos == 0) {
+        printf(" El area no es positiva\n");
+    }
+
+    printf("\n-------------------- RESUMEN DE DATOS INGRESADOS --------------------\n");
+    printf("Opcion de figura ingresada: %d\n", fig);
+    printf("Parametro 1 : %.2f\n", pa1);
+    printf("Parametro 2 : %.2f\n", pa2);
+    printf("Valor minimo entre todas las variables utilizadas: %.4f\n", min_val);
+   
+    return 0;
+}
