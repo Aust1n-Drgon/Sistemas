@@ -1,0 +1,57 @@
+# include <stdio.h>
+
+int main() {
+    int PRI = 21;
+    int VER = 21;
+    int OTO = 23;
+    int INv = 21;
+    int m = 0;
+    int d = 0;
+    int min_val = 0;
+    const char *estacion = "Desconocida";
+
+    printf(" Ingrese el mes (1-12): ");
+    scanf("%d", &m);
+    printf("Ingrese el dia (1-31): ");
+    scanf("%d", &d);
+
+    if ((m == 3 && d >= PRI) || m == 4 || m == 5 || (m == 6 && d < VER)) {
+        estacion = "Primavera";
+    } 
+    else if ((m == 6 && d >= VER) || m == 7 || m == 8 || (m == 9 && d < OTO)) {
+        estacion = "Verano";
+    } 
+    else if ((m == 9 && d >= OTO) || m == 10 || m == 11 || (m == 12 && d < INv)) {
+        estacion = "Otono";
+    } 
+    else {
+        estacion = "Invierno";
+    }
+
+    min_val = m;
+    if (d < min_val) {
+        min_val = d;
+    }
+    if (PRI < min_val) {
+        min_val = PRI;
+    }
+    if (VER < min_val) {
+        min_val = VER;
+    }
+    if (OTO < min_val) {
+        min_val = OTO;
+    }
+    if (INv < min_val) {
+        min_val = INv;
+    }
+
+    printf("\n-------------------- INFORMACION DE SALIDA --------------------\n");
+    printf("Mes ingresado: %d\n", m);
+    printf("Dia ingresado: %d\n", d);
+    printf("Estacion del ano determinada: %s\n", estacion);
+    printf("Valor minimo entre todas las variables: %d\n", min_val);
+    printf("---------------------------------------------------------------\n");
+    printf("\n[INFO]: Proceso completado exitosamente en el sistema de la cooperativa.\n");
+
+    return 0;
+}
