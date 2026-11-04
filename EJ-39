@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    
+    float d, t, v, v_b;
+   
+    printf("Ingrese la distancia recorrida (metros): ");
+    scanf("%f", &d);
+    printf("Ingrese el tiempo transcurrido (segundos): ");
+    scanf("%f", &t);
+
+    if(t > 0 && d >= 0){
+
+         v = d / t;
+        v_b = v * 1.5f;
+
+    }
+    else{
+
+        printf("Error no se puede realizar el ejercicio ya que la distancia y el tiempo no son los requeridos.\n ");
+    }
+    
+    printf("\n--- RESULTADOS ---\n");
+    printf("Velocidad calculada: %.3f m/s\n", v);
+    printf("Velocidad con bono (x1.5): %.3f m/s\n", v_b);
+   printf("--------------------------------------------\n");
+
+    return 0;
+}
