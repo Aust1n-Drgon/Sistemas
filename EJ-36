@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    float t1, t2, t3, tp, cost;
+
+    printf("Ingrese la primera temperatura: ");
+    scanf("%2f" , & t1);
+    printf("Ingrese la primera temperatura: ");
+    scanf("%2f" , & t2);
+    printf("Ingrese la primera temperatura: ");
+    scanf("%2f" , & t3);
+
+    tp = ((t1 + t2 + t3) / 3); 
+
+    if (tp > 0) {
+        cost = cos(tp);
+        printf("El coseno del resultado es: %.4f\n", cost);
+    } else {
+        printf("Error: el promedio es menor o igual a cero, no se puede calcular el coseno.\n");
+    }
+
+    printf("TIPO DE OPERACION: Calculo estadistico (promedio aritmetico) y trigonometrico (coseno).\n");
+    printf("El promedio de temperatura es: %.2f\n", tp);
+
+    return 0;
+
+}
