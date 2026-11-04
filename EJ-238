@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    float yar = 0.0f;
+    float pi = 0.0f;
+    
+    printf("Ingrese la distancia en yardas: ");
+    scanf("%f" , &yar);
+    pi = yar * 3;
+    
+    printf("\n-------------------- RESULTADOS DEL CONVERSOR --------------------\n");
+    printf("%.2f yardas equivalen a %.2f pies\n", yar, pi);
+    if (pi > 0) {
+        printf("Evaluacion del resultado: El valor obtenido es POSITIVO.\n");
+    } else if (pi < 0) {
+        printf("Evaluacion del resultado: El valor obtenido es NEGATIVO.\n");
+    } else {
+        printf("Evaluacion del resultado: El valor obtenido es CERO (neutro).\n");
+    }
+
+    printf("------------------------------------------------------------------\n");
+    printf("\n[INFO]: Proceso completado exitosamente en el sistema del hospital.\n");
+
+    return 0;
+}
