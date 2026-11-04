@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    float pe, al, imc, por_gra, por_gra_f;
+    int ed;
+    float se_fa = 1.20f;
+    float ed_fa = 0.23f;
+
+    printf("Ingrese el peso (kg): ");
+    scanf("%f", &pe);
+    printf("Ingrese la altura (metros): ");
+    scanf("%f", &al);
+    printf("Ingrese la edad (anos): ");
+    scanf("%d", &ed);
+
+
+    if (al <= 0 || pe <= 0) {
+        printf("[ERROR]: La altura debe ser mayor a cero.\n");
+
+        return 1;
+       
+    }
+    else{
+
+        imc = pe / (al * al);
+        por_gra = (imc * se_fa) + (ed * ed_fa) - 16.2f;
+        por_gra_f = por_gra * 0.95f;
+
+    }
+
+    printf("\n-------------------- RESULTADOS OBTENIDOS --------------------\n");
+    printf("Indice de Masa Corporal (IMC): %.2f\n", imc);
+    printf("Porcentaje de grasa corporal estimado: %.2f%%\n", por_gra);
+    printf("Porcentaje de grasa final (con 5%% de descuento aplicado): %.2f%%\n", por_gra_f);
+    printf("--------------------------------------------------------------\n");
+    
+    return 0;
+}
