@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int b, w, si; 
+    float mi_b, mi_w;
+    
+    printf("Ingrese el valor entero b : ");
+    scanf("%d", &b);
+    printf("Ingrese el valor entero w : ");
+    scanf("%d", &w);
+
+    si = (b == w);
+
+    printf("\n--- RESULTADOS DE LA EVALUACIÓN DE SEÑALES ---\n");
+    
+    if (si != 0) {
+        printf("Estado: Los numeros ingresados (%d y %d) resultan ser iguales.\n", b, w);
+    } else {
+        printf("Estado: Los numeros ingresados (%d y %d) resultan ser diferentes.\n", b, w);
+    }
+
+    mi_b = (float)b / 2.0f;
+    mi_w = (float)w / 2.0f;
+
+    printf("\n--- CÁLCULO ADICIONAL (MITAD DE LOS VALORES) ---\n");
+    printf("La mitad de b (%d) es: %.2f\n", b, mi_b);
+    printf("La mitad de w (%d) es: %.2f\n", w, mi_w);
+
+    return 0;
+}
