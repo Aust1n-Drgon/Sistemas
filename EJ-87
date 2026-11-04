@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int b = 0;
+    int R_L = 0;
+    int es_pr = 0;
+    int suma_div = 0;
+    int cont_ope = 0;
+    int min_val = 0;
+    int i = 0;
+
+    printf("Ingrese un numero entero : ");
+    scanf("%d", &b);
+    cont_ope++;
+
+    if (b > 0) {
+        R_L = (int)sqrt((double)b);
+        cont_ope++;
+    } 
+    else {
+        R_L = 0;
+        cont_ope++;
+    }
+
+    if (b > 1) {
+        es_pr = 1;
+        cont_ope++;
+        
+        i = 2;
+        while (i <= R_L) {
+            cont_ope++;
+            if (b % i == 0) {
+                es_pr = 0;
+                cont_ope++;
+            }
+            i++;
+            cont_ope++;
+        }
+    } 
+    else {
+        es_pr = 0;
+        cont_ope++;
+    }
+
+    suma_div = 0;
+    cont_ope++;
+    i = 1;
+    while (i < b) {
+        cont_ope++;
+        if (b % i == 0) {
+            suma_div += i;
+            cont_ope++;
+        }
+        i++;
+        cont_ope++;
+    }
+
+    min_val = b;
+    cont_ope++;
+    
+    if (R_L < min_val) {
+        min_val = R_L;
+        cont_ope++;
+    }
+    if (es_pr < min_val) {
+        min_val = es_pr;
+        cont_ope++;
+    }
+    if (suma_div < min_val) {
+        min_val = suma_div;
+        cont_ope++;
+    }
+    if (cont_ope < min_val) {
+        min_val = cont_ope;
+        cont_ope++;
+    }
+    if (i < min_val) {
+        min_val = i;
+        cont_ope++;
+    }
+
+    printf("\n-------------------- INFORMACION DE SALIDA --------------------\n");
+    printf("[DATOS DE ENTRADA REGISTRADOS]:\n");
+    printf(" Numero ingresado : %d\n", b);
+    
+    printf("\n[RESULTADOS DEL ANALISIS]:\n");
+    printf(" Limite de la raiz cuadrada : %d\n", R_L);
+    
+    printf(" Es primo : ");
+    if (es_pr == 1) {
+        printf("Verdadero (1)\n");
+    }
+    if (es_pr == 0) {
+        printf("Falso (0)\n");
+    }
+
+    printf("Suma de los divisores propios: %d\n", suma_div);
+    printf("Contador total de operaciones: %d\n", cont_ope);
+    printf("Valor minimo entre todas las variables utilizadas: %d\n", min_val);
+    printf("---------------------------------------------------------------\n");
+    printf("\n[INFO]: Proceso completado exitosamente en el sistema de la panaderia.\n");
+
+    return 0;
+}
