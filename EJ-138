@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int ed = 0;
+    int may_ed = 18;
+    int ed_min_vo = 16;
+    char na; 
+    int es_may_e = 0;
+    int pue_v = 0;
+    int su_acum_p = 0;
+    printf("Ingrese la edad que tiene: ");
+    scanf("%d", &ed);
+    printf("Ingrese la nacionalidad ('e' para ecuatoriana, otra letra si es extranjero): ");
+    scanf(" %c", &na);
+    if (ed <= 0) {
+        printf("\n[ERROR]: La edad debe ser mayor a cero.\n");
+        return 1;
+    }
+    if (ed >= may_ed) {
+        es_may_e = 1;
+    }
+    if (ed >= ed_min_vo && (na == 'e' || na == 'E')) {
+        pue_v = 1;
+    }
+    if (es_may_e == 1) {
+        su_acum_p = su_acum_p + 1;
+    }
+    if (pue_v == 1) {
+        su_acum_p = su_acum_p + 1;
+    }
+    if (es_may_e == 1) {
+        printf("Es mayor de edad (%d anos): Si (Verdadero)\n", may_ed);
+    }
+    if (es_may_e == 0) {
+        printf("Es mayor de edad (%d anos): No (Falso)\n", may_ed);
+    }
+    if (pue_v == 1) {
+        printf("Estado de votacion: La persona **SI** puede votar.\n");
+    }
+    if (pue_v == 0) {
+        printf("Estado de votacion: La persona **NO** puede votar.\n");
+    }
+    printf("Suma acumulada de las evaluaciones cumplidas: %d\n", su_acum_p);
+    printf("\n[INFO]: Proceso completado exitosamente.\n");
+    return 0;
+}
