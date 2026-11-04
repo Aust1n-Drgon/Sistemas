@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(){
+
+    float PI = 3.14159f;
+    float radi = 0, gra = 0, coci = 0;
+
+    printf("Ingrese los angulos que tiene ( sexagesimal): ");
+    scanf("%f" , &gra);
+    
+    if  ((gra >= 0) && (gra < 360)){
+
+        radi = (gra * PI /  180);
+        coci = radi * 1.5;
+        printf("El valor esta dentro del rango estandar\n");
+        printf("----------Resultados---------\n ");
+        printf("%.2f grados equivalen a %.4f radianes\n", gra, radi);
+        printf("Cociente realizado por 1.5 es: %.4f\n", coci);
+
+    } 
+    else{
+        printf("El valor ingresado no es valido, debe estar entre 0 y 360\n");
+
+        return 1;
+    }
+
+    return 0;
+
+}
