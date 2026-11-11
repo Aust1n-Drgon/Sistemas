@@ -1,0 +1,22 @@
+# include <math.h>
+# include <stdio.h>
+
+int main (){
+
+    float c1 , c2,c3, nl, nc,f;
+
+    printf("Ingrese la nota del primer certamen : ");
+    scanf("%f" , &c1);
+    printf("Ingrese la nota del segundo certamen : ");
+    scanf("%f" , &c2);
+    printf("Ingrese la nota del laboratorio: ");
+    scanf("%f" , &nl);
+
+    nc = (60.0 - (nl * 0.3)) / 0.7;
+    c3 = (nc * 3.0) - (c1 + c2);
+
+    printf("La nota del certamen 3 que necesita es de: %.2f \n", c3);
+    
+    return 0;
+
+}
